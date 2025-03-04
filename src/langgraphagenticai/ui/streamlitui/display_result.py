@@ -27,6 +27,15 @@ class DisplayResultStreamlit:
                             st.write(user_message)
                         with st.chat_message("assistant"):
                             st.write(value["messages"].content)
+        elif usecase=="Chatbot with Tools":
+            for event in graph.stream({'messages':("user",user_message)}):
+                    print(event.values())
+                    for value in event.values():
+                        print(value['messages'])
+                        with st.chat_message("user"):
+                            st.write(user_message)
+                        with st.chat_message("assistant"):
+                            st.write(value["messages"].content)
        
        # Code written by me
         """
