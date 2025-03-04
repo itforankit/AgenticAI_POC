@@ -17,6 +17,7 @@ class ToolNode:
                 if callable(tool_function):
                     response = tool_function(user_query)
                     # Update state with each tool's response
+                    print(f"Ankit Tool1 {tool_name} responded with: {response}")  # Debug
                     state[f"tool_response_{tool_name}"] = response
                     print(f"Tool {tool_name} responded with: {response}")  # Debug
         return state
