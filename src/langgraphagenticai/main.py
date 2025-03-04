@@ -33,7 +33,8 @@ def load_langgraph_agenticai_app():
                 # Configure LLM
                 obj_llm_config = GroqLLM(user_controls_input=user_input)
                 model = obj_llm_config.get_llm_model()
-                
+                #model = obj_llm_config.get_llm_model_with_tools()
+
                 if not model:
                     st.error("Error: LLM model could not be initialized.")
                     return
@@ -49,9 +50,11 @@ def load_langgraph_agenticai_app():
                 graph_builder=GraphBuilder(model)
                 try:
                     graph = graph_builder.setup_graph(usecase)
+                   # print("user mesage",user_message)
                     DisplayResultStreamlit(usecase,graph,user_message).display_result_on_ui()
                 except Exception as e:
                     st.error(f"Error: Graph setup failed - {e}")
+                    #st.write("Tools Available:", combinedtools)
                     return
                 
 
