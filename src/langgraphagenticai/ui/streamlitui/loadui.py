@@ -54,7 +54,7 @@ class LoadStreamlitUI:
                 # API key input
                 #self.user_controls["GROQ_API_KEY"] = st.session_state["GROQ_API_KEY"] = st.text_input("API Key",
                 #                                                                                      type="password")
-                self.user_controls["GROQ_API_KEY"] ="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"
+                self.user_controls["GROQ_API_KEY"] ="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"
 
                 # Validate API key
                 if not self.user_controls["GROQ_API_KEY"]:
